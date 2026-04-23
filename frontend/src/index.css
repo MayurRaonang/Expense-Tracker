@@ -1,0 +1,88 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg:        #0e0f11;
+  --bg-card:   #16181c;
+  --bg-hover:  #1e2026;
+  --bg-input:  #1a1c21;
+  --border:    #2a2d35;
+  --border-focus: #4f6ef7;
+
+  --text-primary:   #f0f1f3;
+  --text-secondary: #8b8f9a;
+  --text-muted:     #555a68;
+
+  --accent:      #4f6ef7;
+  --accent-soft: rgba(79, 110, 247, 0.12);
+  --accent-glow: rgba(79, 110, 247, 0.25);
+
+  --success:      #34d97b;
+  --success-soft: rgba(52, 217, 123, 0.1);
+  --warning:      #f5a623;
+  --warning-soft: rgba(245, 166, 35, 0.1);
+  --danger:       #f25c5c;
+  --danger-soft:  rgba(242, 92, 92, 0.1);
+  --teal:         #2dd4bf;
+  --teal-soft:    rgba(45, 212, 191, 0.1);
+  --purple:       #a78bfa;
+  --purple-soft:  rgba(167, 139, 250, 0.1);
+
+  --radius-sm:  6px;
+  --radius-md:  10px;
+  --radius-lg:  14px;
+  --radius-xl:  20px;
+
+  --font-sans: 'DM Sans', sans-serif;
+  --font-mono: 'DM Mono', monospace;
+
+  --sidebar-w: 240px;
+  --header-h:  64px;
+}
+
+html, body, #root {
+  height: 100%;
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+/* Utility */
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
+
+/* Animations */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.5; }
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.animate-fade-up { animation: fadeUp 0.35s ease both; }
+.animate-fade-in { animation: fadeIn 0.25s ease both; }
+
+/* Links */
+a { color: inherit; text-decoration: none; }
+button { font-family: var(--font-sans); cursor: pointer; border: none; background: none; }
+input, select, textarea { font-family: var(--font-sans); }

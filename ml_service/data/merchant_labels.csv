@@ -1,0 +1,534 @@
+merchant,category
+Swiggy,Food
+Zomato,Food
+McDonald's,Food
+KFC,Food
+Pizza Hut,Food
+Domino's,Food
+Burger King,Food
+Subway,Food
+Starbucks,Food
+Cafe Coffee Day,Food
+Haldiram's,Food
+Barbeque Nation,Food
+Paradise Biryani,Food
+Saravana Bhavan,Food
+Mainland China,Food
+Faasos,Food
+Box8,Food
+FreshMenu,Food
+EatFit,Food
+Dunzo Food,Food
+BigBasket,Food
+Grofers,Food
+Nature's Basket,Food
+DMart,Food
+Reliance Fresh,Food
+Spencer's,Food
+More Supermarket,Food
+Star Bazaar,Food
+Heritage Foods,Food
+Nilgiris,Food
+Uber,Transport
+Ola,Transport
+Rapido,Transport
+Meru Cabs,Transport
+Zoom Car,Transport
+Revv,Transport
+Drivezy,Transport
+InDrive,Transport
+BluSmart,Transport
+Yulu,Transport
+Indian Railways,Transport
+IRCTC,Transport
+RedBus,Transport
+AbhiBus,Transport
+IntrCity,Transport
+Volvo Bus,Transport
+BMTC,Transport
+DTC,Transport
+BEST Mumbai,Transport
+Metro Card,Transport
+IndiGo,Travel
+SpiceJet,Travel
+Air India,Travel
+Vistara,Travel
+GoAir,Travel
+AirAsia,Travel
+Akasa Air,Travel
+MakeMyTrip,Travel
+Goibibo,Travel
+Yatra,Travel
+Cleartrip,Travel
+OYO,Travel
+Treebo,Travel
+FabHotels,Travel
+Zostel,Travel
+Airbnb,Travel
+Booking.com,Travel
+Agoda,Travel
+Hotels.com,Travel
+Trivago,Travel
+Amazon,Shopping
+Flipkart,Shopping
+Myntra,Shopping
+Ajio,Shopping
+Meesho,Shopping
+Nykaa,Shopping
+Snapdeal,Shopping
+ShopClues,Shopping
+Tata CLiQ,Shopping
+Reliance Digital,Shopping
+Croma,Shopping
+Vijay Sales,Shopping
+Poorvika,Shopping
+Jio Mart,Shopping
+Decathlon,Shopping
+Westside,Shopping
+Lifestyle,Shopping
+Shoppers Stop,Shopping
+Pantaloons,Shopping
+Max Fashion,Shopping
+Netflix,Entertainment
+Amazon Prime,Entertainment
+Disney Hotstar,Entertainment
+Sony LIV,Entertainment
+Zee5,Entertainment
+MX Player,Entertainment
+Voot,Entertainment
+Spotify,Entertainment
+JioSaavn,Entertainment
+Gaana,Entertainment
+Apple Music,Entertainment
+YouTube Premium,Entertainment
+BookMyShow,Entertainment
+PVR Cinemas,Entertainment
+INOX,Entertainment
+Cinepolis,Entertainment
+Steam,Entertainment
+PlayStation Store,Entertainment
+Xbox,Entertainment
+Epic Games,Entertainment
+Apollo Pharmacy,Health
+MedPlus,Health
+1mg,Health
+PharmEasy,Health
+Netmeds,Health
+Practo,Health
+DocPrime,Health
+mFine,Health
+Healthians,Health
+Lybrate,Health
+Cult.fit,Health
+Cure.fit,Health
+Fitbit,Health
+HealthifyMe,Health
+Portea,Health
+HDFC Life,Health
+Star Health Insurance,Health
+Niva Bupa,Health
+Care Health,Health
+Max Bupa,Health
+Airtel,Utilities
+Jio,Utilities
+Vi Vodafone,Utilities
+BSNL,Utilities
+MTNL,Utilities
+Tata Sky,Utilities
+Dish TV,Utilities
+Hathway,Utilities
+ACT Fibernet,Utilities
+Excitel,Utilities
+BESCOM,Utilities
+MSEDCL,Utilities
+BSES,Utilities
+Tata Power,Utilities
+Adani Electricity,Utilities
+Indane LPG,Utilities
+HP Gas,Utilities
+Bharat Gas,Utilities
+Piped Gas,Utilities
+Water Board,Utilities
+Byju's,Education
+Unacademy,Education
+Vedantu,Education
+WhiteHat Jr,Education
+upGrad,Education
+Coursera,Education
+Udemy,Education
+edX,Education
+Simplilearn,Education
+Great Learning,Education
+NIIT,Education
+Apna,Education
+LinkedIn Learning,Education
+Skillshare,Education
+Khan Academy,Education
+Pearson,Education
+Chegg,Education
+Toppr,Education
+Meritnation,Education
+Testbook,Education
+HDFC Bank,Other
+ICICI Bank,Other
+SBI,Other
+Axis Bank,Other
+Kotak Bank,Other
+Yes Bank,Other
+IndusInd Bank,Other
+PNB,Other
+Bank of Baroda,Other
+Canara Bank,Other
+Paytm,Other
+PhonePe,Other
+Google Pay,Other
+Amazon Pay,Other
+MobiKwik,Other
+FreeCharge,Other
+PayU,Other
+Razorpay,Other
+BillDesk,Other
+CCAvenue,Other
+LIC,Other
+SBI Life,Other
+ICICI Prudential,Other
+Max Life,Other
+Bajaj Allianz,Other
+Zerodha,Other
+Groww,Other
+Angel Broking,Other
+Upstox,Other
+HDFC Securities,Other
+Dunzo,Other
+Blinkit,Other
+Zepto,Other
+Instamart,Other
+Swiggy Instamart,Food
+Porter,Transport
+Shiprocket,Other
+Delhivery,Other
+BlueDart,Other
+FedEx India,Other
+DTDC,Other
+India Post,Other
+Urban Company,Other
+Housejoy,Other
+NoBroker,Other
+MagicBricks,Other
+99acres,Other
+Housing.com,Other
+CommonFloor,Other
+Swiggy app,Food
+Swiggy delivery,Food
+SWIGGY,Food
+swiggy,Food
+Zomato order,Food
+ZOMATO,Food
+McDonalds,Food
+Mc Donalds,Food
+Mac Donalds,Food
+KFC India,Food
+Pizza hut,Food
+Pizzahut,Food
+Dominos,Food
+Dominos Pizza,Food
+Burger king,Food
+Starbucks Coffee,Food
+CCD,Food
+Cafe Coffee Day India,Food
+Haldiraam,Food
+Big Basket,Food
+bigbasket.com,Food
+BB Daily,Food
+Grofers India,Food
+Blinkit Grocery,Food
+Zepto Grocery,Food
+Swiggy Genie,Food
+D Mart,Food
+Dmart Ready,Food
+Reliance Smart,Food
+More Retail,Food
+FreshToHome,Food
+Licious,Food
+Country Delight,Food
+Milkbasket,Food
+Ninjacart,Food
+EatSure,Food
+Rebel Foods,Food
+Uber India,Transport
+Uber ride,Transport
+UBER,Transport
+Ola Cabs,Transport
+Ola ride,Transport
+OLA,Transport
+Rapido Bike,Transport
+Rapido Auto,Transport
+Meru,Transport
+Zoomcar,Transport
+Zoom car,Transport
+BluSmart EV,Transport
+Yulu Bike,Transport
+Indian Rail,Transport
+Railways,Transport
+IRCTC Rail,Transport
+Red Bus,Transport
+Redbus,Transport
+Volvo bus,Transport
+City bus,Transport
+BMTC bus,Transport
+Metro rail,Transport
+Metro card recharge,Transport
+Namma Metro,Transport
+Delhi Metro,Transport
+Mumbai Metro,Transport
+InDrive ride,Transport
+Bounce Bike,Transport
+Indigo Airlines,Travel
+Indigo flight,Travel
+INDIGO,Travel
+Spice Jet,Travel
+SpiceJet Airlines,Travel
+Air India flight,Travel
+Vistara Airlines,Travel
+Go Air,Travel
+GoFirst,Travel
+AirAsia India,Travel
+Akasa Airlines,Travel
+Make My Trip,Travel
+MakeMyTrip Hotels,Travel
+Goibibo Hotels,Travel
+Yatra.com,Travel
+Cleartrip flights,Travel
+OYO Rooms,Travel
+OYO Hotels,Travel
+Treebo Hotels,Travel
+Fab Hotels,Travel
+FabHotels,Travel
+Zostel Hostel,Travel
+Airbnb stay,Travel
+Booking com,Travel
+Agoda Hotels,Travel
+Hotels com,Travel
+IRCTC Travel,Travel
+Cox and Kings,Travel
+Thomas Cook India,Travel
+EaseMyTrip,Travel
+Ixigo,Travel
+Amazon India,Shopping
+Amazon.in,Shopping
+amazon,Shopping
+AMAZON,Shopping
+Flipkart India,Shopping
+flipkart,Shopping
+FLIPKART,Shopping
+Myntra Fashion,Shopping
+Ajio Fashion,Shopping
+Meesho app,Shopping
+Nykaa Beauty,Shopping
+Nykaa Fashion,Shopping
+Nykaa Man,Shopping
+Snapdeal India,Shopping
+Tata Cliq,Shopping
+TATA CLiQ,Shopping
+Reliance Digital store,Shopping
+Croma store,Shopping
+Vijay Sales store,Shopping
+Jiomart grocery,Shopping
+JioMart,Shopping
+Decathlon India,Shopping
+Westside store,Shopping
+Lifestyle store,Shopping
+Shoppers Stop store,Shopping
+Pantaloons store,Shopping
+Max Fashion store,Shopping
+Bewakoof,Shopping
+Zivame,Shopping
+Clovia,Shopping
+Mamaearth,Shopping
+The Man Company,Shopping
+Boat Store,Shopping
+Noise Store,Shopping
+boAt,Shopping
+Pepperfry,Shopping
+Urban Ladder,Shopping
+IKEA India,Shopping
+FirstCry,Shopping
+BabyChakra,Shopping
+Netflix India,Entertainment
+netflix,Entertainment
+NETFLIX,Entertainment
+Amazon Prime Video,Entertainment
+Prime Video,Entertainment
+Disney Plus Hotstar,Entertainment
+Hotstar,Entertainment
+Disney+,Entertainment
+Sony Liv,Entertainment
+SonyLIV,Entertainment
+ZEE5,Entertainment
+Zee Five,Entertainment
+MX Player app,Entertainment
+Voot app,Entertainment
+Spotify music,Entertainment
+JioSaavn music,Entertainment
+Gaana music,Entertainment
+Apple Music India,Entertainment
+YouTube Music,Entertainment
+BookMyShow tickets,Entertainment
+Book My Show,Entertainment
+PVR Cinema,Entertainment
+PVR multiplex,Entertainment
+INOX Cinema,Entertainment
+Cinepolis Cinema,Entertainment
+Steam games,Entertainment
+PS Store,Entertainment
+PlayStation,Entertainment
+Xbox games,Entertainment
+Epic Games store,Entertainment
+Alt Balaji,Entertainment
+Lionsgate Play,Entertainment
+Manorama Online,Entertainment
+Sun NXT,Entertainment
+Hungama,Entertainment
+Apollo Pharmacy store,Health
+Apollo Health,Health
+MedPlus pharmacy,Health
+Medplus store,Health
+1MG,Health
+1 mg,Health
+Tata 1mg,Health
+PharmEasy order,Health
+Netmeds order,Health
+Practo app,Health
+Lybrate app,Health
+mFine app,Health
+CultFit,Health
+Cult fit,Health
+Cure Fit,Health
+Fitbit India,Health
+HealthifyMe app,Health
+Portea Medical,Health
+HDFC Life Insurance,Health
+Star Health,Health
+Niva Bupa Insurance,Health
+Care Health Insurance,Health
+MediBuddy,Health
+Thyrocare,Health
+Dr Lal PathLabs,Health
+SRL Diagnostics,Health
+Manipal Hospitals,Health
+Apollo Hospitals,Health
+Fortis Healthcare,Health
+Max Hospital,Health
+Airtel postpaid,Utilities
+Airtel prepaid,Utilities
+Airtel Broadband,Utilities
+airtel,Utilities
+AIRTEL,Utilities
+Jio postpaid,Utilities
+Jio prepaid,Utilities
+Jio Fiber,Utilities
+JioFiber,Utilities
+Vi Vodafone Idea,Utilities
+Vodafone,Utilities
+Idea Cellular,Utilities
+BSNL broadband,Utilities
+Tata Sky DTH,Utilities
+Dish TV DTH,Utilities
+Hathway Cable,Utilities
+ACT Broadband,Utilities
+Excitel Broadband,Utilities
+BESCOM electricity,Utilities
+MSEDCL electricity,Utilities
+BSES electricity,Utilities
+Tata Power bill,Utilities
+Adani Gas,Utilities
+Indane Gas,Utilities
+HP Gas booking,Utilities
+Bharat Gas booking,Utilities
+Piped Gas bill,Utilities
+Water bill,Utilities
+BBMP,Utilities
+Municipal water,Utilities
+CESC electricity,Utilities
+Torrent Power,Utilities
+Byjus,Education
+BYJUS,Education
+Byju's app,Education
+Byju's classes,Education
+Unacademy Plus,Education
+Vedantu app,Education
+WhiteHat Junior,Education
+White Hat Jr,Education
+upGrad courses,Education
+Coursera course,Education
+Udemy course,Education
+edX course,Education
+Simplilearn course,Education
+Great Learning course,Education
+NIIT course,Education
+LinkedIn Learning course,Education
+Skillshare course,Education
+Khan Academy course,Education
+Pearson Education,Education
+Chegg India,Education
+Toppr app,Education
+Meritnation app,Education
+Testbook app,Education
+Unext Learning,Education
+Leverage Edu,Education
+Collegedunia,Education
+Shiksha,Education
+Embibe,Education
+Physics Wallah,Education
+PW app,Education
+HDFC Bank transfer,Other
+HDFC credit card,Other
+HDFC debit,Other
+ICICI Bank transfer,Other
+ICICI credit card,Other
+SBI transfer,Other
+SBI YONO,Other
+Axis Bank transfer,Other
+Kotak Mahindra Bank,Other
+Yes Bank transfer,Other
+IndusInd Bank,Other
+PNB transfer,Other
+Bank of Baroda transfer,Other
+Canara Bank transfer,Other
+Paytm wallet,Other
+Paytm Mall,Other
+PhonePe transfer,Other
+Google Pay transfer,Other
+GPay,Other
+Amazon Pay wallet,Other
+MobiKwik wallet,Other
+FreeCharge wallet,Other
+PayU payment,Other
+Razorpay payment,Other
+BillDesk payment,Other
+CCAvenue payment,Other
+LIC premium,Other
+SBI Life premium,Other
+ICICI Prudential,Other
+Max Life Insurance,Other
+Bajaj Allianz Insurance,Other
+Zerodha Kite,Other
+Groww app,Other
+Angel One,Other
+Upstox app,Other
+HDFC Securities,Other
+Sharekhan,Other
+5paisa,Other
+Kotak Securities,Other
+Shiprocket delivery,Other
+Delhivery courier,Other
+BlueDart courier,Other
+FedEx courier,Other
+DTDC courier,Other
+India Post,Other
+Urban Company service,Other
+NoBroker rental,Other
+MagicBricks property,Other
+99acres property,Other
+Housing com,Other
+Square Yards,Other

@@ -1,0 +1,10 @@
+# expense-tracker/.gitignore
+.env
+.env.*
+node_modules/
+/backend/node_modules/
+/backend/.env
+/backend/.env.*
+/frontend/node_modules/
+/frontend/.env
+/frontend/.env.*
