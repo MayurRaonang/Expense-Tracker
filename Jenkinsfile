@@ -169,5 +169,4 @@ pipeline {
         testResults: '**/test-results/*.xml'
     }
   }
-
 } // end pipeline
