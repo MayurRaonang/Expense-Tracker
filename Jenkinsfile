@@ -44,7 +44,11 @@ pipeline {
         stage('ML deps') {
           steps {
             dir('ml_service') {
-              sh 'pip install -r requirements.txt --quiet'
+                sh '''
+                    python3 -m venv venv
+                    . venv/bin/activate
+                    pip install -r requirements.txt --quiet
+                '''
             }
           }
         }
