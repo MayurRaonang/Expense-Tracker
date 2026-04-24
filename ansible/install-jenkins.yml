@@ -1,0 +1,103 @@
+---
+- name: Install and configure Jenkins server
+  hosts: jenkins
+  become: true
+
+  tasks:
+
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+        cache_valid_time: 3600
+
+    - name: Install Java 21 (required by Jenkins)
+      apt:
+        name: openjdk-21-jdk
+        state: present
+
+    - name: Remove Java 17
+      apt:
+        name: openjdk-17-jdk
+        state: absent
+
+    - name: Set Java 21 as default
+      shell: |
+        update-alternatives --set java /usr/lib/jvm/java-21-openjdk-amd64/bin/java
+        update-alternatives --set javac /usr/lib/jvm/java-21-openjdk-amd64/bin/javac
+      args:
+        executable: /bin/bash
+
+    - name: Install gnupg and curl
+      apt:
+        name:
+          - gnupg
+          - curl
+          - ca-certificates
+        state: present
+
+    - name: Add Jenkins GPG key and repo in one reliable shell block
+      shell: |
+        gpg --keyserver keyserver.ubuntu.com --recv-keys 7198F4B714ABFC68
+        gpg --export 7198F4B714ABFC68 | gpg --dearmor -o /usr/share/keyrings/jenkins-keyring.gpg
+        echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.gpg] https://pkg.jenkins.io/debian-stable binary/" \
+        > /etc/apt/sources.list.d/jenkins.list
+        chmod 644 /usr/share/keyrings/jenkins-keyring.gpg
+        chmod 644 /etc/apt/sources.list.d/jenkins.list
+      args:
+        creates: /usr/share/keyrings/jenkins-keyring.gpg
+
+    - name: Verify GPG key fingerprint
+      shell: gpg --show-keys /usr/share/keyrings/jenkins-keyring.gpg
+      register: gpg_info
+      changed_when: false
+
+    - name: Show GPG key info
+      debug:
+        var: gpg_info.stdout_lines
+
+    - name: Update apt cache after adding Jenkins repo
+      apt:
+        update_cache: yes
+
+    - name: Install Jenkins
+      apt:
+        name: jenkins
+        state: present
+
+    - name: Start and enable Jenkins service
+      systemd:
+        name: jenkins
+        state: started
+        enabled: yes
+
+    - name: Install Docker
+      apt:
+        name: docker.io
+        state: present
+
+    - name: Start and enable Docker
+      systemd:
+        name: docker
+        state: started
+        enabled: yes
+
+    - name: Add jenkins user to docker group
+      user:
+        name: jenkins
+        groups: docker
+        append: yes
+
+    - name: Install kubectl
+      get_url:
+        url: https://dl.k8s.io/release/v1.29.0/bin/linux/amd64/kubectl
+        dest: /usr/local/bin/kubectl
+        mode: '0755'
+
+    - name: Install Git
+      apt:
+        name: git
+        state: present
+
+    - name: Print Jenkins initial admin password location
+      debug:
+        msg: "Get Jenkins password with: sudo cat /var/lib/jenkins/secrets/initialAdminPassword"

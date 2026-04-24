@@ -74,7 +74,10 @@ pipeline {
         stage('ML tests') {
           steps {
             dir('ml_service') {
-              sh 'python -m pytest tests/ -v'
+              sh '''
+                    . venv/bin/activate
+                    python3 -m pytest tests/ -v
+                '''
             }
           }
         }

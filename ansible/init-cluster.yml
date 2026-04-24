@@ -1,0 +1,72 @@
+---
+- name: Initialize Kubernetes master node
+  hosts: k8s_master
+  become: true
+
+  tasks:
+
+    - name: Reset kubeadm (clean previous failed setup)
+      command: kubeadm reset -f
+      ignore_errors: yes
+
+    - name: Remove old Kubernetes config
+      file:
+        path: /etc/kubernetes
+        state: absent
+
+    - name: Initialize the cluster with kubeadm (FIXED)
+      command: >
+        kubeadm init
+        --pod-network-cidr=192.168.0.0/16
+        --apiserver-advertise-address={{ ansible_default_ipv4.address }}
+      args:
+        creates: /etc/kubernetes/admin.conf
+
+    - name: Create .kube directory for ubuntu user
+      file:
+        path: /home/ubuntu/.kube
+        state: directory
+        owner: ubuntu
+        group: ubuntu
+        mode: '0755'
+
+    - name: Copy admin.conf to ubuntu user kubeconfig
+      copy:
+        src: /etc/kubernetes/admin.conf
+        dest: /home/ubuntu/.kube/config
+        remote_src: yes
+        owner: ubuntu
+        group: ubuntu
+        mode: '0600'
+
+    - name: Install Calico pod network (CNI)
+      become: false
+      command: kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.27.0/manifests/calico.yaml
+
+    - name: Get worker join command
+      command: kubeadm token create --print-join-command
+      register: join_command
+
+    - name: Save join command to local file
+      copy:
+        content: "{{ join_command.stdout }}"
+        dest: /tmp/k8s-join-command.sh
+      delegate_to: localhost
+      become: false
+
+- name: Join worker nodes to the cluster
+  hosts: k8s_workers
+  become: true
+
+  tasks:
+
+    - name: Copy join command to workers
+      copy:
+        src: /tmp/k8s-join-command.sh
+        dest: /tmp/join-cluster.sh
+        mode: '0755'
+
+    - name: Join worker to cluster
+      command: sh /tmp/join-cluster.sh
+      args:
+        creates: /etc/kubernetes/kubelet.conf
