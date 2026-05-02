@@ -83,29 +83,27 @@ pipeline {
         }
       }
     }
-        stage('SonarQube Analysis') {
+    stage('SonarQube Analysis') {
       steps {
-        // Frontend analysis
         dir('frontend') {
           withSonarQubeEnv('SonarQube') {
             sh 'npm test'
             sh "${tool 'SonarQube-Scanner'}/bin/sonar-scanner"
           }
         }
-
-        // Backend analysis
         dir('backend') {
           withSonarQubeEnv('SonarQube') {
             sh 'npm test'
             sh "${tool 'SonarQube-Scanner'}/bin/sonar-scanner"
           }
         }
-
-        // ML service analysis
         dir('ml_service') {
           withSonarQubeEnv('SonarQube') {
-            sh 'pytest tests/ --cov=. --cov-report=xml --cov-report=term'
-            sh "${tool 'SonarQube-Scanner'}/bin/sonar-scanner"
+            sh '''
+              . venv/bin/activate
+              pytest tests/ --cov=. --cov-report=xml --cov-report=term
+              ${SONAR_SCANNER_HOME}/bin/sonar-scanner
+            '''
           }
         }
       }
