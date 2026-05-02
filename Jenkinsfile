@@ -60,7 +60,7 @@ pipeline {
         stage('Frontend tests') {
           steps {
             dir('frontend') {
-              sh 'npm test -- --watchAll=false --coverage'
+              sh 'npm test'
             }
           }
         }
@@ -88,7 +88,7 @@ pipeline {
         // Frontend analysis
         dir('frontend') {
           withSonarQubeEnv('SonarQube') {
-            sh 'npm test'
+            sh 'npm test -- --watchAll=false --coverage'
             sh "${tool 'SonarQube-Scanner'}/bin/sonar-scanner"
           }
         }

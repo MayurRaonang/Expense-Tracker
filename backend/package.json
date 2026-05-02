@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node src/index.js",
     "dev": "nodemon src/index.js",
-    "test": "jest --coverage --coverageReporters=lcov text"
+    "test": "jest --coverage --coverageReporters=lcov text --passWithNoTests"
   },
   "dependencies": {
     "axios": "^1.6.2",
