@@ -88,7 +88,7 @@ pipeline {
         // Frontend analysis
         dir('frontend') {
           withSonarQubeEnv('SonarQube') {
-            sh 'npm test -- --watchAll=false --coverage'
+            sh 'npm test'
             sh "${tool 'SonarQube-Scanner'}/bin/sonar-scanner"
           }
         }
