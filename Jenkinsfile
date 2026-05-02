@@ -6,7 +6,7 @@ pipeline {
   }
 
   environment {
-    DOCKERHUB_USER    = 'your-dockerhub-username'
+    DOCKERHUB_USER    = 'mayurraonang'
     IMAGE_TAG         = "${BUILD_NUMBER}-${GIT_COMMIT[0..6]}"
 
     FRONTEND_IMAGE    = "${DOCKERHUB_USER}/expense-frontend:${IMAGE_TAG}"
@@ -99,11 +99,12 @@ pipeline {
         }
         dir('ml_service') {
           withSonarQubeEnv('SonarQube') {
-            sh '''
+            sh """
               . venv/bin/activate
+              pip install pytest-cov --quiet
               pytest tests/ --cov=. --cov-report=xml --cov-report=term
-              ${SONAR_SCANNER_HOME}/bin/sonar-scanner
-            '''
+              ${tool 'SonarQube-Scanner'}/bin/sonar-scanner
+            """
           }
         }
       }
