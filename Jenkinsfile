@@ -83,16 +83,30 @@ pipeline {
         }
       }
     }
-    stage('SonarQube Analysis') {
+        stage('SonarQube Analysis') {
       steps {
-        withSonarQubeEnv('SonarQube') {
-          sh '''
-            npx sonar-scanner \
-              -Dsonar.projectKey=${SONAR_PROJECT_KEY} \
-              -Dsonar.sources=. \
-              -Dsonar.exclusions=**/node_modules/**,**/dist/**,**/__pycache__/**,**/build/** \
-              -Dsonar.javascript.lcov.reportPaths=frontend/coverage/lcov.info,backend/coverage/lcov.info
-          '''
+        // Frontend analysis
+        dir('frontend') {
+          withSonarQubeEnv('SonarQube') {
+            sh 'npm test -- --watchAll=false --coverage'
+            sh "${tool 'SonarQube-Scanner'}/bin/sonar-scanner"
+          }
+        }
+
+        // Backend analysis
+        dir('backend') {
+          withSonarQubeEnv('SonarQube') {
+            sh 'npm test'
+            sh "${tool 'SonarQube-Scanner'}/bin/sonar-scanner"
+          }
+        }
+
+        // ML service analysis
+        dir('ml_service') {
+          withSonarQubeEnv('SonarQube') {
+            sh 'pytest tests/ --cov=. --cov-report=xml --cov-report=term'
+            sh "${tool 'SonarQube-Scanner'}/bin/sonar-scanner"
+          }
         }
       }
     }
@@ -104,6 +118,7 @@ pipeline {
         }
       }
     }
+    
     stage('Docker Build') {
       steps {
         sh '''
