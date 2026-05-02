@@ -30,14 +30,14 @@ pipeline {
         stage('Frontend deps') {
           steps {
             dir('frontend') {
-              sh 'npm ci'
+              sh 'npm install'
             }
           }
         }
         stage('Backend deps') {
           steps {
             dir('backend') {
-              sh 'npm ci'
+              sh 'npm install'
             }
           }
         }
@@ -118,7 +118,7 @@ pipeline {
         }
       }
     }
-    
+
     stage('Docker Build') {
       steps {
         sh '''
