@@ -10,6 +10,6 @@ data:
   DB_NAME: expense_tracker
   DB_USER: postgres
   ML_SERVICE_URL: http://ml-svc:8000
-  ALLOWED_ORIGINS: http://localhost:3000,http://localhost:5173
+  ALLOWED_ORIGINS: http://localhost:3000,http://localhost:5173,http://15.207.145.213:30000
   JWT_EXPIRATION_MS: "86400000"
   NODE_ENV: production
