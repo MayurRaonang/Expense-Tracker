@@ -146,23 +146,21 @@ pipeline {
       }
     }
     stage('Deploy to Kubernetes') {
-      when {
-        branch 'main'
-      }
+      when { branch 'main' }
       steps {
         withKubeConfig([credentialsId: 'kubeconfig-credentials']) {
           sh '''
-            # Update image tags in manifests dynamically
-            sed -i "s|FRONTEND_IMAGE_TAG|${FRONTEND_IMAGE}|g" k8s/frontend-deployment.yaml
-            sed -i "s|BACKEND_IMAGE_TAG|${BACKEND_IMAGE}|g"   k8s/backend-deployment.yaml
-            sed -i "s|ML_IMAGE_TAG|${ML_IMAGE}|g"             k8s/ml-deployment.yaml
+            # Substitute image placeholders with real tagged images
+            sed -i "s|FRONTEND_IMAGE_TAG|${FRONTEND_IMAGE}|g" k8s/06-frontend.yaml
+            sed -i "s|BACKEND_IMAGE_TAG|${BACKEND_IMAGE}|g"   k8s/04-backend.yaml
+            sed -i "s|ML_IMAGE_TAG|${ML_IMAGE}|g"             k8s/05-ml-service.yaml
 
-            # Apply all manifests
+            # Apply all manifests (namespace, config, secrets already exist — idempotent)
             kubectl apply -f k8s/
 
-            # Wait for rollout to complete
-            kubectl rollout status deployment/frontend -n expense-tracker --timeout=120s
-            kubectl rollout status deployment/backend  -n expense-tracker --timeout=120s
+            # Wait for each deployment rollout to finish
+            kubectl rollout status deployment/frontend   -n expense-tracker --timeout=120s
+            kubectl rollout status deployment/backend    -n expense-tracker --timeout=120s
             kubectl rollout status deployment/ml-service -n expense-tracker --timeout=120s
           '''
         }
