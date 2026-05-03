@@ -36,6 +36,9 @@ app.use(express.json());
 
 // ── Health check — mirrors /actuator/health (public) ─────────────────────────
 app.get('/actuator/health', (_req, res) => res.json({ status: 'UP' }));
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'ok' });
+});
 
 // ── Routes — mirrors @RequestMapping on controllers ──────────────────────────
 app.use('/api/auth',         authRoutes);

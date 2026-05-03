@@ -41,12 +41,12 @@ spec:
           valueFrom:
             configMapKeyRef:
               name: backend-config
-              key: localhost
+              key: DB_USER
         - name: POSTGRES_PASSWORD
           valueFrom:
             secretKeyRef:
               name: backend-secret
-              key: Mayur@2005
+              key: DB_PASSWORD
         volumeMounts:
         - name: postgres-storage
           mountPath: /var/lib/postgresql/data
