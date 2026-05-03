@@ -12,3 +12,4 @@ node_modules/
 /terraform/terraform.tfstate
 /terraform/terraform.tfstate.backup
 /terraform/terraform.tfvars
+/k8s/02-secret.yaml
