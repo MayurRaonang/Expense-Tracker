@@ -30,6 +30,7 @@ app.use(
     allowedHeaders: ['*'],
     credentials: true,
   })
+  
 );
 
 app.use(express.json());
